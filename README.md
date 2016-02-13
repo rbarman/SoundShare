@@ -7,8 +7,9 @@ Development Process
     - ``sudo npm install webpack-dev-server`` first
     - point browser to ``http://localhost:8080/webpack-dev-server/public``
 * Feature branches are rebased into master
-    - git checkout -b feature
+    - ``git checkout -b feature``
     - ...
-    - git rebase -i master
-    - git checkout master
-    - git merge feature
+    - ``git rebase -i master``
+    - ``git checkout master``
+    - ``git pull`` [Fix potential merge conflicts on master first]
+    - ``git merge feature``
