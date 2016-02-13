@@ -4,7 +4,8 @@ Experimental Plug dj esque sound sharing platform to learn ReactJS.
 Development Process
 
 * ``webpack`` for continuous browser updates on file changes
-    - ``npm start`` or ``webpack-dev-server``
+    - ``npm install``
+    - ``npm start`` [npm script to run webpack-dev-server command]
     - point browser to ``http://localhost:8080/webpack-dev-server/public``
 * Feature branches are rebased into master
     - ``git checkout -b feature``
