@@ -1,14 +1,14 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var RaisedButton = require('material-ui/lib/raised-button');
-var List = require('material-ui/lib/lists/list');
-var ListItem = require('material-ui/lib/lists/list-item');
-var AppBar =  require('material-ui/lib/app-bar');
-var TextField = require('material-ui/lib/text-field');
+import React from "react";
+import ReactDOM from "react-dom";
+import RaisedButton from "material-ui/lib/raised-button";
+import List from "material-ui/lib/lists/list";
+import ListItem from "material-ui/lib/lists/list-item";
+import AppBar from "material-ui/lib/app-bar";
+import TextField from "material-ui/lib/text-field";
 
 // creating the Main component
-var Main = React.createClass({
-	render: function() {
+class Main extends React.Component{
+	render() {
 		return (
 
 			<div> 
@@ -35,7 +35,7 @@ var Main = React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 // render Main component to app in DOM
 ReactDOM.render(<Main /> , document.getElementById('app'));
