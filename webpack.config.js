@@ -3,7 +3,7 @@ module.exports = {
 	entry: "./app/components/Main.js",
 	// where to put translated js
 	output : {
-		filename: "./public/script.js"
+		filename: "./app/script.js"
 	},
 
 	module: {

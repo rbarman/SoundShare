@@ -18,7 +18,7 @@ class Main extends React.Component{
 					showMenuIconButton={false}
 				/>
 				<List>
-					Queue
+					Queues
 				      <ListItem primaryText="Song 1"/>
 				      <ListItem primaryText="Song 2"/>
 				      <ListItem primaryText="Song 3"/>
