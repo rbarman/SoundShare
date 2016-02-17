@@ -20,7 +20,6 @@ export default class AddSongForm extends React.Component{
 
 	// prop method from SongQueue component
 	// adds the inputted song to SongQueue and clears the TextField 
-	// TODO : avoid repititions, React wants objects with unique keys. Here the keys are just the value
 	addSong(e) {
         this.props.addSong(this.state.inputtedSong);
 		this.setState({ inputtedSong: "" });	
@@ -40,8 +39,9 @@ export default class AddSongForm extends React.Component{
 					onEnterKeyDown = {this.addSong}
 					value = {this.state.inputtedSong}
 				/>
+
 				<br/>
-			{/* How to get the value from textfield and add it as a param to addSong() ?*/}
+
 				<RaisedButton
 					onClick = {this.addSong}
 					label="Add to Queue"
