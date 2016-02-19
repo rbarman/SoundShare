@@ -1,8 +1,9 @@
-#SoundShare
-Experimental Plug dj esque sound sharing platform to learn ReactJS.
+#SoundShare# 
 -----------------
-Development Process
 
+Experimental Plug.dj esque sound sharing platform to learn ReactJS and Flux architecture.
+
+Development Process
 * ``webpack`` for continuous browser updates on file changes
     - ``npm install``
     - ``npm start`` [npm script to run webpack-dev-server command]
