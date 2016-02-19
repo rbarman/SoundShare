@@ -1,4 +1,4 @@
-#SoundShare# 
+#SoundShare
 -----------------
 
 Experimental Plug.dj esque sound sharing platform to learn ReactJS and Flux architecture.
