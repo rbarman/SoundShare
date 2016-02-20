@@ -1,33 +1,30 @@
 import React from "react";
 import RaisedButton from "material-ui/lib/raised-button";
 import TextField from "material-ui/lib/text-field";
+import songActions from "../actions/SongActions"
 
-// SongForm allows user to enter a song URL 
-// The inputtedSong is added to SongQueue via prop method addSong()
-// The inputtedSong is submitted when the user presses enter or clicks on the submit button
-export default class AddSongForm extends React.Component{
+// SongForm allows users to submit a song URL via clicking submit or pressing enter
+// SongForm will take the url and dispatch an addSong action. 
+class AddSongForm extends React.Component{
 
 	constructor(props) {
 		super(props);
-		// Method Bindings
-		this.addSong = this.addSong.bind(this);
-		this.handleTextFieldChange = this.handleTextFieldChange.bind(this);
 		// State
 		this.state = {
-			inputtedSong : ""
+			urlInput : ""
 		}
 	}
 
-	// prop method from SongQueue component
-	// adds the inputted song to SongQueue and clears the TextField 
-	addSong(e) {
-        this.props.addSong(this.state.inputtedSong);
-		this.setState({ inputtedSong: "" });	
-    }
+	// dispatches an addSong action to update store
+	handleSubmit(e) {
+		event.preventDefault();
+		this.props.dispatch(songActions.addSong(this.state.urlInput))
+		this.setState({urlInput : ""}) // clears TextField value
+	}
 
-    // State.inpputtedSong will get updated whenever the text field value is changed
+    // updates this.state.urlInput when text in TextField is changed
     handleTextFieldChange(e) {
-    	this.setState({ inputtedSong: e.target.value });
+    	this.setState({ urlInput: e.target.value });
     }
 
 	render() {
@@ -35,15 +32,15 @@ export default class AddSongForm extends React.Component{
 			<div>
 				<TextField 
 					hintText="Song URL"
-					onChange = {this.handleTextFieldChange}
-					onEnterKeyDown = {this.addSong}
-					value = {this.state.inputtedSong}
+					onChange = {this.handleTextFieldChange.bind(this)}
+					onEnterKeyDown = {this.handleSubmit.bind(this)}
+					value = {this.state.urlInput}
 				/>
 
 				<br/>
 
 				<RaisedButton
-					onClick = {this.addSong}
+					onClick = {this.handleSubmit.bind(this)}
 					label="Add to Queue"
 					secondary={true}
 				/>
@@ -51,6 +48,5 @@ export default class AddSongForm extends React.Component{
 		)
 	}
 }
-AddSongForm.propTypes = {
-    addSong: React.PropTypes.func.isRequired
-};
+
+export default AddSongForm

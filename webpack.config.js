@@ -1,6 +1,6 @@
 module.exports = {
 	// root component -> where to start prossessing jsx
-	entry: "./app/components/Main.js",
+	entry: "./app/components/index.js",
 	// where to put translated js
 	output : {
 		filename: "./app/script.js"

@@ -2,42 +2,27 @@ import React from "react";
 import List from "material-ui/lib/lists/list";
 import ListItem from "material-ui/lib/lists/list-item";
 import RaisedButton from "material-ui/lib/raised-button";
-import AddSongForm from "./AddSongForm";
 
-// SongQueue queues up all the entered songs
+// SongQueue will display all of the songs entered in AddSongForm
+// SongQueue is able to get these songs from the store via this.props.songs
 export default class SongQueue extends React.Component{
-	constructor() {
-		super();
-		// Method bindings
-		this.addSong= this.addSong.bind(this);
-		// State
-		this.state = {
-			songs : []
-		}
-	}
-
-	addSong(song) {
-		var array = this.state.songs.slice();
-		// Only want to add unique songs to queue
-		// Will not get the children must have unique keys error
-		// TODO : Notifications to show user https://github.com/jesusoterogomez/react-notify-toast
-		if(!array.includes(song)) {
-			array.push(song);
-			this.setState({ songs: array });
-		}
+	constructor(props) {
+		super(props);
 	}
 
 	render() {
 		return(
 			<div>
-				<List>
-					Queue
-					{this.state.songs.map(function(value) {
-						return <ListItem key = {value} primaryText = {value}/>
-            		})}
-				</List>
-
-				<AddSongForm addSong={this.addSong}/>
+				<ul>
+					{	/*Display each song url as list item 
+						NOTE : current implementation has no check for duplicate inputs
+							-> React WILL throw a warning on non unique keys
+						*/
+						this.props.songs.map((song) => {
+							return <li key = {song.url}> {song.url} </li>
+						})
+					}
+				</ul>
 			</div>
 		)
 	}
