@@ -13,16 +13,16 @@ export default class SongQueue extends React.Component{
 	render() {
 		return(
 			<div>
-				<ul>
+				<List>
 					{	/*Display each song url as list item 
 						NOTE : current implementation has no check for duplicate inputs
 							-> React WILL throw a warning on non unique keys
 						*/
 						this.props.songs.map((song) => {
-							return <li key = {song.url}> {song.url} </li>
+							return <ListItem key = {song.url}  primaryText =  {song.url}/>
 						})
 					}
-				</ul>
+				</List>
 			</div>
 		)
 	}
