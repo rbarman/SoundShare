@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import AppBar from "material-ui/lib/app-bar";
 import SongQueue from "./SongQueue";
 import AddSongForm from "./AddSongForm";
+import Player from "./Player";
 
 // Root Component
 class Root extends React.Component{
@@ -14,6 +15,8 @@ class Root extends React.Component{
 					title="SoundShare"
 					showMenuIconButton={false}
 				/>
+
+				<Player />
 
 				<SongQueue 
 					songs = {this.props.songs}
