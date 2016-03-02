@@ -16,7 +16,9 @@ class Root extends React.Component{
 					showMenuIconButton={false}
 				/>
 
-				<Player />
+				<Player 
+					songs = {this.props.songs}
+				/>
 
 				<SongQueue 
 					songs = {this.props.songs}

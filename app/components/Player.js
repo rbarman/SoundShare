@@ -5,11 +5,12 @@ class Player extends React.Component{
 	render() {
 		return (
 			<div>
-				{/* Get urls from Queue as props*/}
-				<ReactPlayer
-      				url='https://soundcloud.com/brothelmusic/pairplaywithdivine'
-      				playing={true}
-    			/>				
+
+	    		<ReactPlayer
+					url={this.props.songs[0].url}
+					playing={true}
+				/>	
+
 			</div>
 		)
 	}
